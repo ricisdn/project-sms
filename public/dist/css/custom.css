@@ -1,0 +1,56 @@
+#logout {
+    color: red;
+    text-align: center;
+}
+
+#container-form {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    height: auto;
+    padding: 5%;
+    width: 450px;
+    outline: auto;
+    font-family: "Playpen Sans", cursive;
+}
+
+#btn-form {
+    width: 100%;
+}
+
+form {
+    width: 100%;
+}
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(121, 9, 81, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+}
+
+#email,
+#password,
+#name,
+#password-confirm {
+    background-color: white;
+}
+
+#email:focus,
+#password:focus,
+#name:focus,
+#password-confirm:focus {
+    color: white;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(121, 9, 81, 1) 0%,
+        rgba(0, 212, 255, 1) 100%
+    );
+}

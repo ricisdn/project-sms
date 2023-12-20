@@ -1,0 +1,31 @@
+* {
+    font-size: 12px;
+    font-family: "Playpen Sans", cursive;
+}
+
+.sidebar,
+#sidebar {
+    background-color: #2daae1;
+}
+
+p,
+svg {
+    color: white;
+}
+
+#table_paginate {
+    margin-top: 5px;
+}
+
+#table_info {
+    margin-top: 5px;
+}
+
+#table_paginate span a {
+    background-color: #027bff;
+}
+
+span {
+    color: white;
+    font-weight: bold;
+}
