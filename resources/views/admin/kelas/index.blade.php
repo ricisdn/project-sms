@@ -25,8 +25,7 @@
                         </div>
                         <div class="col-6">
                             <div class="float-right mb-3">
-                                <a class="btn btn-outline-primary"><i class="fas fa-download"></i>
-                                    Download</a>
+                            <button id="printBtn" class="btn btn-success">Print Data</button>
                                 <a href="{{ route('tambah-kelasadm') }}" class="btn btn-primary"><i
                                         class="fas fa-plus"></i></a>
                             </div>
@@ -70,7 +69,32 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
+        function download() {
+            // Clone the table without the photo and action columns
+            var print = $('#table').clone();
+            print.find(' th:last-child, td:last-child').remove();
+
+            // Open a new window and write the table to it
+            var printWindow = window.open('', '_blank');
+            printWindow.document.write('<html><head><title>Print</title></head><body>');
+            printWindow.document.write('<h1>Rekapitulasi Data Kelas</h1>');
+            printWindow.document.write(
+                '<table border=1 style="border-collapse:collapse; width: 100%; text-align: center;">' + print
+                .html() + '</table>');
+            printWindow.document.write('</body></html>');
+
+            printWindow.document.close();
+            printWindow.print();
+        }
+
         $(document).ready(function() {
+            table = $('#table').DataTable();
+
+            $('#filter_kelas').change(function() {
+                var pilihkelas = $(this).val();
+                table.column(3).search(pilihkelas).draw();
+            });
+
             $('.deletebtn').click(function(e) {
                 e.preventDefault();
                 var id = $(this).data('id');
@@ -85,8 +109,7 @@
                     confirmButtonText: "Yes, delete it!"
                 }).then(function(result) {
                     if (result.isConfirmed) {
-                        $.post('{{ route('delete-kelasadm', ['id' => '__id__']) }}'.replace(
-                                '__id__',
+                        $.post('{{ route('delete-kelasadm', ['id' => '__id__']) }}'.replace('__id__',
                                 id), {
                                 '_token': '{{ csrf_token() }}',
                                 'id': id
@@ -109,7 +132,12 @@
                 });
             });
 
+            // Initialize DataTable
             $('#table').DataTable();
+
+            $('#printBtn').on('click', function() {
+                download();
+            });
         });
     </script>
 @endsection

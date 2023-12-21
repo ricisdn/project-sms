@@ -24,8 +24,7 @@
                         </div>
                         <div class="col-6">
                             <div class="float-right mb-3">
-                                <a class="btn btn-outline-primary"><i class="fas fa-download"></i>
-                                    Download</a>
+                                
                                 <a href="{{ url('tambah-pengumpulanadm') }}" class="btn btn-primary"><i
                                         class="fas fa-plus"></i></a>
                             </div>
