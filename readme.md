@@ -18,12 +18,38 @@
 -   Orangtua
 -   Siswa
 
-| Account Type | Username | Email | Password |
-| ------------ | -------- | ----- | -------- |
-| admin        | -        |       |          |
-| guru         | -        |       |          |
-| orangtua     | -        |       |          |
-| siswa        | -        |       |          |
+<table>
+    <tr>
+        <td>Account Type</td>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Password</td>
+    </tr>
+    <tr>
+        <td>Admin</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Guru</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Orangtua</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Siswa</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
 
 ---
 
