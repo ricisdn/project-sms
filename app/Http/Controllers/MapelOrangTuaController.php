@@ -11,15 +11,23 @@ use Illuminate\Support\Facades\Auth;
 
 class MapelOrangTuaController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $orangtua = OrangTua::where('id_user', Auth::user()->id)->first();
-        $siswa = Siswa::where('id',  $orangtua->id_siswa)->first();
-    
+
         if ($orangtua) {
-            $mapel = Mapel::where('id_kelas', $siswa->id_kelas)->get();
+            $siswa = Siswa::where('id', $orangtua->id_siswa)->first();
+
+            if ($siswa) {
+                $mapel = Mapel::where('id_kelas', $siswa->id_kelas)->get();
+            } else {
+                $mapel = collect();
+            }
         } else {
             $mapel = collect();
         }
+
         return view('orangtua.jadwal.index', compact('mapel'));
     }
+
 }

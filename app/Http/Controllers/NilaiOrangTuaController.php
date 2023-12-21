@@ -15,13 +15,20 @@ class NilaiOrangTuaController extends Controller
     public function index()
     {
         $orangtua = OrangTua::where('id_user', Auth::user()->id)->first();
-        $siswa = Siswa::where('id', $orangtua->id_siswa)->first();
 
         if ($orangtua) {
-            $nilai = Pengumpulan::where('id_user', $siswa->id_user)->get();
+            $siswa = Siswa::where('id', $orangtua->id_siswa)->first();
+
+            if ($siswa) {
+                $nilai = Pengumpulan::where('id_user', $siswa->id_user)->get();
+            } else {
+                $nilai = collect();
+            }
         } else {
             $nilai = collect();
+            $siswa = null;
         }
+
         return view('orangtua.nilai.index', compact('nilai', 'siswa'));
     }
 }
