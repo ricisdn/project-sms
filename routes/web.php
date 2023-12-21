@@ -12,7 +12,28 @@ Auth::routes();
 Route::get('/logout', 'HomeController@logout');
 
 // BARIZA : Siswa
+Route::group(['middleware' => ['auth', 'role:']], function () {
+    Route::get('siswa', 'DashboardSiswaController@index');
 
+    // Route Presensi
+    Route::get('presensi-siswa', 'PresensiSiswaController@index');
+
+    // Route Mata Pelajaran
+    Route::get('jadwal-siswa', 'MapelSiswaController@index');
+
+    // Route Nilai
+    Route::get('nilai-siswa', 'NilaiSiswaController@index');
+
+    // Route Tugas
+    Route::get('tugas-siswa', 'TugasSiswaController@index');
+    Route::get('tambah-tugas-siswa/{id}', 'TugasSiswaController@show')->name('tambah-tugas-siswa');
+    Route::get('edit-tugas-siswa/{id}', 'TugasSiswaController@edit')->name('edit-tugas-siswa');
+    Route::post('tambah-tugas-siswa/', 'TugasSiswaController@store')->name('submit-tugas');
+    Route::post('edit-tugas-siswa/', 'TugasSiswaController@update')->name('edit-tugas');
+
+    Route::get('/index-profilsiswa', 'ProfilController@indexsiswa')->name('profilsiswa');
+    Route::post('update-profilesiswa', 'ProfilController@updatesiswa')->name('update-profilesiswa');
+});
 
 // WIDHIANI & SERLY : Admin
 Route::group(['middleware' => ['auth', 'role:1']], function () {
