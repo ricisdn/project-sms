@@ -105,7 +105,6 @@ Route::group(['middleware' => ['auth', 'role:1']], function () {
     Route::get('/update-pengumpulanadm/{pengumpulan}/edit', 'PengumpulanController@editadm')->name('update-pengumpulanadm');
     Route::post('/update-pengumpulanadm/{pengumpulan}/edit', 'PengumpulanController@updateadm')->name('update-pengumpulanadm');
     Route::post('/delete-pengumpulanadm/{id}', 'PengumpulanController@deleteadm')->name('delete-pengumpulanadm');
-
 });
 
 
@@ -161,3 +160,18 @@ Route::group(['middleware' => ['auth', 'role:2']], function () {
 });
 
 // FAHRI : Orangtua
+Route::group(['middleware' => ['auth', 'role:3']], function () {
+    Route::get('orangtua', 'DashboardOrangTuaController@index');
+
+    Route::get('/index-profilortu', 'ProfilController@indexortu')->name('profilortu');
+    Route::post('update-profilortu', 'ProfilController@updateortu')->name('update-profileortu');
+
+    // Route Presensi
+    Route::get('view-presensi', 'PresensiOrangTuaController@index');
+
+    // Route Jadwal
+    Route::get('view-jadwal', 'MapelOrangTuaController@index');
+
+    // Route Transkrip
+    Route::get('view-transkrip', 'NilaiOrangTuaController@index');
+});
