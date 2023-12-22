@@ -75,25 +75,11 @@
         {{-- Sidebar Section --}}
         <aside class="main-sidebar sidebar-dark-primary" id="sidebar">
             <!-- Brand Logo -->
-            <a href="{{ url('/home') }}" class="brand-link">
-                <img src="{{ asset('img/logo-sekolah.png') }}" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text text-light">DASHBOARD</span>
-            </a>
+            <img src="https://i.ibb.co/7QWNLKJ/ducation-5.png" alt="img" class="d-flex mx-auto m-0"
+                style="width: 220px; height: 140px;">
 
             <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                            alt="User Image">
-                    </div>
-                    <div class="info text-light">
-                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-                    </div>
-                </div>
-
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
@@ -114,7 +100,7 @@
 
                         {{-- Dashboard --}}
                         <li class="nav-item">
-                            <a href="{{ url('/orangtua') }}" class="nav-link text-light">
+                            <a href="{{ url('/orangtua') }}" class="nav-link text-light" style="margin-left: -4px">
                                 <i data-lucide="layout-dashboard"></i>
                                 <p>Dashboard</p>
                             </a>
@@ -122,7 +108,7 @@
 
                         {{-- Konten --}}
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link text light">
+                            <a href="#" class="nav-link text light" style="margin-left: -4px">
                                 <i data-lucide="graduation-cap"></i>
                                 <p>Akademi <i class="right fas fa-angle-left"></i></p>
                             </a>
@@ -151,7 +137,7 @@
                         </li>
 
                         {{-- Logout --}}
-                        <li class="nav-item mt-5">
+                        <li class="nav-item mt-5" style="margin-left: -2px">
                             <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();"
@@ -169,12 +155,6 @@
 
 
         @yield('content')
-
-
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021</strong>
-            All rights reserved.
-        </footer>
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

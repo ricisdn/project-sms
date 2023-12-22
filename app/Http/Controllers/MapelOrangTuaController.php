@@ -22,12 +22,15 @@ class MapelOrangTuaController extends Controller
                 $mapel = Mapel::where('id_kelas', $siswa->id_kelas)->get();
             } else {
                 $mapel = collect();
+                $siswa = null;
             }
         } else {
             $mapel = collect();
+            $siswa = null;
         }
 
-        return view('orangtua.jadwal.index', compact('mapel'));
+        return view('orangtua.jadwal.index', compact('mapel', 'siswa'));
     }
-
 }
+
+
