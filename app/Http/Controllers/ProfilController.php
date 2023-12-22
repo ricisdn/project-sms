@@ -56,7 +56,7 @@ class ProfilController extends Controller
         // Check if a new photo is uploaded
         if ($request->hasFile('avatar')) {
             if ($user->foto) {
-                $oldPhotoPath = public_path('uploads/profile/guru' . $user->foto);
+                $oldPhotoPath = public_path('uploads/profile/' . $user->foto);
                 if (file_exists($oldPhotoPath)) {
                     unlink($oldPhotoPath);
                 }
@@ -65,7 +65,7 @@ class ProfilController extends Controller
             // Mengirim Foto
             $avatar = $request->file('avatar');
             $format = now()->format('YmdHis') . '.' . $avatar->getClientOriginalExtension();
-            $avatar->move(public_path('uploads/profile/guru'), $format);
+            $avatar->move(public_path('uploads/profile/'), $format);
             $user->foto = $format;
         }
 
@@ -100,7 +100,7 @@ class ProfilController extends Controller
         // Check if a new photo is uploaded
         if ($request->hasFile('avatar')) {
             if ($user->foto) {
-                $oldPhotoPath = public_path('uploads/profile/admin' . $user->foto);
+                $oldPhotoPath = public_path('uploads/profile/' . $user->foto);
                 if (file_exists($oldPhotoPath)) {
                     unlink($oldPhotoPath);
                 }
@@ -109,7 +109,7 @@ class ProfilController extends Controller
             // Mengirim Foto
             $avatar = $request->file('avatar');
             $format = now()->format('YmdHis') . '.' . $avatar->getClientOriginalExtension();
-            $avatar->move(public_path('uploads/profile/admin'), $format);
+            $avatar->move(public_path('uploads/profile/'), $format);
             $user->foto = $format;
         }
 
@@ -144,7 +144,7 @@ class ProfilController extends Controller
         // Check if a new photo is uploaded
         if ($request->hasFile('avatar')) {
             if ($user->foto) {
-                $oldPhotoPath = public_path('uploads/profile/siswa' . $user->foto);
+                $oldPhotoPath = public_path('uploads/profile/' . $user->foto);
                 if (file_exists($oldPhotoPath)) {
                     unlink($oldPhotoPath);
                 }
@@ -153,7 +153,7 @@ class ProfilController extends Controller
             // Mengirim Foto
             $avatar = $request->file('avatar');
             $format = now()->format('YmdHis') . '.' . $avatar->getClientOriginalExtension();
-            $avatar->move(public_path('uploads/profile/siswa'), $format);
+            $avatar->move(public_path('uploads/profile/'), $format);
             $user->foto = $format;
         }
 
@@ -188,7 +188,7 @@ class ProfilController extends Controller
         // Check if a new photo is uploaded
         if ($request->hasFile('avatar')) {
             if ($user->foto) {
-                $oldPhotoPath = public_path('uploads/profile/orangtua' . $user->foto);
+                $oldPhotoPath = public_path('uploads/profile/' . $user->foto);
                 if (file_exists($oldPhotoPath)) {
                     unlink($oldPhotoPath);
                 }
@@ -197,7 +197,7 @@ class ProfilController extends Controller
             // Mengirim Foto
             $avatar = $request->file('avatar');
             $format = now()->format('YmdHis') . '.' . $avatar->getClientOriginalExtension();
-            $avatar->move(public_path('uploads/profile/orangtua'), $format);
+            $avatar->move(public_path('uploads/profile/'), $format);
             $user->foto = $format;
         }
 

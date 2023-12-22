@@ -28,7 +28,7 @@
                                 <div class="img-container mx-auto"
                                     style="width: 170px; height: 170px; border-radius: 50%; overflow: hidden; background-color: black;">
                                     @if ($user->foto)
-                                        <img src="{{ asset('uploads/profile/admin/' . $user->foto) }}" alt=""
+                                        <img src="{{ asset('uploads/profile/' . $user->foto) }}" alt=""
                                             style="width: 170px; height: 170px; background-size: cover; background-position: center">
                                     @endif
                                 </div>
