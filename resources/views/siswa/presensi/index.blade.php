@@ -1,5 +1,17 @@
 @extends('layouts.master-siswa')
 
+@section('css')
+    <style>
+        .content-wrapper {
+            background: url('https://i.ibb.co/vPRm5gz/bg5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+    </style>
+@endsection
+
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-wrapper" style="background-color: #ddd">
@@ -67,9 +79,8 @@
                             <div class="alert alert-danger" role="alert">
                                 <strong>Error.</strong> No data found.
                             </div>
-                            @else
-                        
-                        <table class="table table-hover table-bordered mb-0" id="presensi-table" style="min-width">
+                        @else
+                            <table class="table table-hover table-bordered mb-0" id="presensi-table" style="min-width">
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>

@@ -1,5 +1,17 @@
 @extends('layouts.master-siswa')
 
+@section('css')
+    <style>
+        .content-wrapper {
+            background: url('https://i.ibb.co/vPRm5gz/bg5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+    </style>
+@endsection
+
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-wrapper" style="background-color: #ddd">
@@ -24,13 +36,13 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="card">
-                <div class="card-body" style="overflow-x:auto;">
-                    @if ($mapel->isEmpty())
+                    <div class="card-body" style="overflow-x:auto;">
+                        @if ($mapel->isEmpty())
                             <div class="alert alert-danger" role="alert">
                                 <strong>Error.</strong> No data found.
                             </div>
-                            @else
-                        <table id="jadwal-table" class="table table-hover table-bordered mb-0" style="min-width">
+                        @else
+                            <table id="jadwal-table" class="table table-hover table-bordered mb-0" style="min-width">
                                 <thead>
                                     <tr>
                                         <th>No</th>

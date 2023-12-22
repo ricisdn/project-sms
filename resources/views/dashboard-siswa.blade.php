@@ -1,5 +1,17 @@
 @extends('layouts.master-siswa')
 
+@section('css')
+    <style>
+        .content-wrapper {
+            background: url('https://i.ibb.co/vPRm5gz/bg5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+    </style>
+@endsection
+
 @php
     function hariIndonesiaToInggris($hari)
     {
