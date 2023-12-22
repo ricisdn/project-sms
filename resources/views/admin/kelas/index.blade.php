@@ -1,5 +1,17 @@
 @extends('layouts.master-admin')
 
+@section('css')
+    <style>
+        .content-wrapper {
+            background: url('https://i.ibb.co/vPRm5gz/bg5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -25,7 +37,7 @@
                         </div>
                         <div class="col-6">
                             <div class="float-right mb-3">
-                            <button id="printBtn" class="btn btn-success">Print Data</button>
+                                <button id="printBtn" class="btn btn-success">Print Data</button>
                                 <a href="{{ route('tambah-kelasadm') }}" class="btn btn-primary"><i
                                         class="fas fa-plus"></i></a>
                             </div>
@@ -109,7 +121,8 @@
                     confirmButtonText: "Yes, delete it!"
                 }).then(function(result) {
                     if (result.isConfirmed) {
-                        $.post('{{ route('delete-kelasadm', ['id' => '__id__']) }}'.replace('__id__',
+                        $.post('{{ route('delete-kelasadm', ['id' => '__id__']) }}'.replace(
+                                '__id__',
                                 id), {
                                 '_token': '{{ csrf_token() }}',
                                 'id': id

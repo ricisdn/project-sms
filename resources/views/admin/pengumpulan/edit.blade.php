@@ -1,4 +1,17 @@
 @extends('layouts.master-admin')
+
+@section('css')
+    <style>
+        .content-wrapper {
+            background: url('https://i.ibb.co/vPRm5gz/bg5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -28,13 +41,14 @@
                     <div class="mb-3">
                         <label for="nilai" class="form-label">Penilaian</label>
                         <input type="text" name="nilai" id="nilai" class="form-control" autocomplete="off"
-                            value="{{ $pengumpulan->nilai}}">
+                            value="{{ $pengumpulan->nilai }}">
                     </div>
 
-                   
+
                     <div class="text-right">
-                        <a href="{{ route('pengumpulanadm') }}" class="btn btn-outline-secondary mr-2" role="button">Batal</a>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="{{ route('pengumpulanadm') }}" class="btn btn-outline-secondary mr-2"
+                            role="button">Batal</a>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>
