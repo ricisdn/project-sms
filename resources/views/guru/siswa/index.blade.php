@@ -1,5 +1,17 @@
 @extends('layouts.master-guru')
 
+@section('css')
+    <style>
+        .content-wrapper {
+            background: url('https://i.ibb.co/hH8KQNH/closeup-books-wellorganized-shelves-bookstore.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -7,11 +19,11 @@
             <div class="container-fluid">
                 <div class="row p-2">
                     <div class="col-sm-6">
-                        <h5 class="m-0">Halaman Data Siswa</h5>
+                        <h5 class="m-0 text-light">Halaman Data Siswa</h5>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item text-light">Home</li>
                             <li class="breadcrumb-item active"><a href="#">Data Siswa</a></li>
                         </ol>
                     </div>
@@ -23,7 +35,7 @@
                         <div class="col-6">
                             <h5>Data Siswa</h5>
                             <div class="mb-3" style="width: 135px">
-                                <select class="form-control bg-secondary" id="filter_kelas">
+                                <select class="form-control bg-dark" id="filter_kelas">
                                     <option value="">-- Semua Kelas --</option>
                                     @foreach ($daftar_kelas as $kelas)
                                         <option value="{{ $kelas->nama_kelas }}">{{ $kelas->nama_kelas }}</option>

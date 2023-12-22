@@ -1,4 +1,17 @@
 @extends('layouts.master-guru')
+
+@section('css')
+    <style>
+        .content-wrapper {
+            background: url('https://i.ibb.co/hH8KQNH/closeup-books-wellorganized-shelves-bookstore.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -6,11 +19,11 @@
             <div class="container-fluid">
                 <div class="row p-2">
                     <div class="col-sm-6">
-                        <h5 class="m-0">Halaman Data Presensi Siswa</h5>
+                        <h5 class="m-0 text-light">Halaman Data Presensi Siswa</h5>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item text-light">Home</li>
                             <li class="breadcrumb-item active"><a href="#">Presensi Siswa</a></li>
                         </ol>
                     </div>
@@ -21,8 +34,8 @@
                     <div class="row">
                         <div class="col-8">
                             <h5>Data Presensi Siswa</h5>
-                            <input type="date" class="mt-2 mb-2 p-2 bg-secondary" id="filter_tgl">
-                            <select class="form-select mt-2 mb-2 p-2 bg-secondary" id="filter_mapel">
+                            <input type="date" class="mt-2 mb-2 p-2 bg-dark" id="filter_tgl">
+                            <select class="form-select mt-2 mb-2 p-2 bg-dark" id="filter_mapel">
                                 <option value="">--- semua mapel ---</option>
                                 @foreach ($daftar_mapel as $mapel)
                                     <option value="{{ $mapel->nama_mapel }}">{{ $mapel->nama_mapel }}</option>

@@ -1,4 +1,17 @@
 @extends('layouts.master-guru')
+
+@section('css')
+    <style>
+        .content-wrapper {
+            background: url('https://i.ibb.co/hH8KQNH/closeup-books-wellorganized-shelves-bookstore.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -6,11 +19,11 @@
             <div class="container-fluid">
                 <div class="row p-2">
                     <div class="col-sm-6">
-                        <h5 class="m-0">Halaman Pengumpulan Tugas</h5>
+                        <h5 class="m-0 text-light">Halaman Pengumpulan Tugas</h5>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item text-light">Home</li>
                             <li class="breadcrumb-item active"><a href="#">Pengumpulan Tugas</a></li>
                         </ol>
                     </div>
@@ -21,19 +34,19 @@
                     <h5>Data Pengumpulan Tugas</h5>
                     <div class="row">
                         <div class="col-12">
-                            <select class="form-select mt-2 p-2 bg-secondary" id="filter_tugas">
+                            <select class="form-select mt-2 p-2 bg-dark" id="filter_tugas">
                                 <option value="">-- semua tugas --</option>
                                 @foreach ($daftar_deskripsi as $deskripsi)
                                     <option value="{{ $deskripsi->deskripsi }}">{{ $deskripsi->deskripsi }}</option>
                                 @endforeach
                             </select>
-                            <select class="form-select mt-2 p-2 bg-secondary" id="filter_kelas">
+                            <select class="form-select mt-2 p-2 bg-dark" id="filter_kelas">
                                 <option value="">-- semua kelas --</option>
                                 @foreach ($daftar_kelas as $kelas)
                                     <option value="{{ $kelas->nama_kelas }}">{{ $kelas->nama_kelas }}</option>
                                 @endforeach
                             </select>
-                            <select class="form-select mt-2 mb-2 p-2 bg-secondary" id="filter_mapel">
+                            <select class="form-select mt-2 mb-2 p-2 bg-dark" id="filter_mapel">
                                 <option value="">--- semua mapel ---</option>
                                 @foreach ($daftar_mapel as $mapel)
                                     <option value="{{ $mapel->nama_mapel }}">{{ $mapel->nama_mapel }}</option>
