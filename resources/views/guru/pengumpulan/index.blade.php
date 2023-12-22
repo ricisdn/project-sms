@@ -72,7 +72,7 @@
                                         <td>{{ $row->user ? $row->user->name : 'Belum ada Siswa' }}</td>
                                         <td>{{ $row->kelas ? $row->kelas->nama_kelas : 'Tidak diketahui' }}</td>
                                         <td>{{ $row->mapel ? $row->mapel->nama_mapel : 'Belum ada Mapel' }}</td>
-                                        <td>{{ $row->catatan }}</td>
+                                        <td>{{ $row->catatan ? $row->catatan : 'Tidak ada catatan' }}</td>
                                         <td><a href="{{ asset('uploads/pengumpulan/' . $row->file) }}"
                                                 target="_blank">{{ $row->file }}</a></td>
                                         <td>

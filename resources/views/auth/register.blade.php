@@ -1,11 +1,22 @@
 @extends('layouts.app')
 
+@section('addCSS')
+    <style>
+        body {
+            background: url('https://i.ibb.co/j6Mym5d/8d60e456-5ade-4640-a1d4-50fd11891171.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Register your account with fill this form') }}</div>
+                    <div class="card-header bg-dark text-light">{{ __('Register your account with fill this form') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -63,9 +74,6 @@
                                     <button type="submit"
                                         class="btn btn-primary btn-block">{{ __('Daftar Sekarang') }}</button>
                                 </div>
-
-
-
                             </div>
 
                             <center class="mt-3">

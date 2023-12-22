@@ -70,7 +70,7 @@
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $row->tugas ? $row->tugas->deskripsi : 'Tidak diketahui' }}</td>
                                         <td>{{ $row->mapel ? $row->mapel->nama_mapel : 'Belum ada mapel' }}</td>
-                                        <td>{{ $row->siswa ? $row->siswa->nama : 'Belum ada siswa' }}</td>
+                                        <td>{{ $row->user ? $row->user->name : 'Belum ada Siswa' }}</td>
                                         <td>{{ $row->kelas ? $row->kelas->nama_kelas : 'Belum ada kelas' }}</td>
                                         <td>
                                             @if ($row->nilai)

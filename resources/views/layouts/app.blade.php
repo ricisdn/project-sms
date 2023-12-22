@@ -13,6 +13,10 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    {{-- SweetAlert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -24,8 +28,19 @@
 <body>
     <main class="py-4">
         @yield('content')
+        @yield('addCSS')
+
+        @if ($errors->has('email') || $errors->has('password'))
+            <script>
+                Swal.fire({
+                    title: "Login Failed",
+                    html: "Silahkan hubungi bagian <b>Administrasi Sekolah</b>",
+                    icon: "error",
+                    confirmButtonText: "OK",
+                });
+            </script>
+        @endif
     </main>
-    </div>
 </body>
 
 </html>
