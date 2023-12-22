@@ -23,6 +23,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        body {
+            background: url('https://i.ibb.co/j6Mym5d/8d60e456-5ade-4640-a1d4-50fd11891171.jpg');
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
