@@ -69,14 +69,12 @@
         {{-- Sidebar Section --}}
         <aside class="main-sidebar sidebar-dark-primary" id="sidebar">
             <!-- Brand Logo -->
-            <a href="#" class="brand-link mb-5" style="margin-left: -5px;">
-                <img src="{{ asset('img/logo-sekolah.png') }}" alt="img" class="brand-image img-circle"
-                    style="opacity: .8">
-                <span class="brand-text text-light">DASHBOARD GURU</span>
-            </a>
+            <img src="https://i.ibb.co/7QWNLKJ/ducation-5.png" alt="img" class="d-flex mx-auto m-0"
+                style="width: 220px; height: 140px;">
 
             <!-- Sidebar -->
-            <div class="sidebar mt-3">
+            <div class="sidebar
+                mt-3">
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
@@ -97,7 +95,7 @@
 
                         {{-- Dashboard --}}
                         <li class="nav-item">
-                            <a href="/guru" class="nav-link text-light" style="margin-left: -5px;">
+                            <a href="/guru" class="nav-link text-light" style="margin-left: -4px;">
                                 <i data-lucide="layout-dashboard"></i>
                                 <p>Dashboard</p>
                             </a>
@@ -106,7 +104,7 @@
 
                         {{-- Konten --}}
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link text-light" style="margin-left: -5px;">
+                            <a href="#" class="nav-link text-light" style="margin-left: -4px;">
                                 <i data-lucide="graduation-cap"></i>
                                 <p>Akademi <i class="right fas fa-angle-left"></i></p>
                             </a>
@@ -134,7 +132,7 @@
                         </li>
 
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link text-light" style="margin-left: -5px;">
+                            <a href="#" class="nav-link text-light" style="margin-left: -4px;">
                                 <i data-lucide="book-check"></i>
                                 <p>Pembelajaran <i class="right fas fa-angle-left"></i></p>
                             </a>
@@ -176,11 +174,6 @@
 
 
         @yield('content')
-
-
-        <footer class="main-footer">
-            {{--  --}}
-        </footer>
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

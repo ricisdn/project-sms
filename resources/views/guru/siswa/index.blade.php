@@ -3,7 +3,7 @@
 @section('css')
     <style>
         .content-wrapper {
-            background: url('https://i.ibb.co/hH8KQNH/closeup-books-wellorganized-shelves-bookstore.jpg');
+            background: url('https://i.ibb.co/vPRm5gz/bg5.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -19,11 +19,11 @@
             <div class="container-fluid">
                 <div class="row p-2">
                     <div class="col-sm-6">
-                        <h5 class="m-0 text-light">Halaman Data Siswa</h5>
+                        <h5 class="m-0">Halaman Data Siswa</h5>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item text-light">Home</li>
+                            <li class="breadcrumb-item">Home</li>
                             <li class="breadcrumb-item active"><a href="#">Data Siswa</a></li>
                         </ol>
                     </div>
@@ -32,7 +32,7 @@
                 {{-- Konten Data --}}
                 <div class="card p-4 m-2">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-8">
                             <h5>Data Siswa</h5>
                             <div class="mb-3" style="width: 135px">
                                 <select class="form-control bg-dark" id="filter_kelas">
@@ -43,7 +43,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="float-right mb-3">
                                 <button id="printBtn" class="btn btn-success">Print Data</button>
                                 <a href="{{ route('tambah-siswa') }}" class="btn btn-primary"><i

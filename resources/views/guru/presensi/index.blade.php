@@ -3,7 +3,7 @@
 @section('css')
     <style>
         .content-wrapper {
-            background: url('https://i.ibb.co/hH8KQNH/closeup-books-wellorganized-shelves-bookstore.jpg');
+            background: url('https://i.ibb.co/vPRm5gz/bg5.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -19,11 +19,11 @@
             <div class="container-fluid">
                 <div class="row p-2">
                     <div class="col-sm-6">
-                        <h5 class="m-0 text-light">Halaman Data Presensi Siswa</h5>
+                        <h5 class="m-0">Halaman Data Presensi Siswa</h5>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item text-light">Home</li>
+                            <li class="breadcrumb-item">Home</li>
                             <li class="breadcrumb-item active"><a href="#">Presensi Siswa</a></li>
                         </ol>
                     </div>
