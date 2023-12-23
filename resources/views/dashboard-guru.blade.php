@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Dashboard Guru
+@endsection
+
 @section('content')
     <div class="content-wrapper" style="background-color: #ddd">
         <!-- Content Header (Page header) -->
@@ -81,6 +85,23 @@
                     <div class="col-md-6 col-lg-6">
                         <div class="card">
                             <div class="card-header bg-dark">
+                                <h3 class="card-title">Record Jejak Pengumpulan Tugas</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="myChart" width="auto" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- View Table Mengajar --}}
+                    <div class="col-md-6 col-lg-6">
+                        <div class="card">
+                            <div class="card-header bg-dark">
                                 <h3 class="card-title">Jadwal Mengajar</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -127,5 +148,93 @@
     </div>
 @endsection
 
-@section('scripts')
+@section('addJS')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        var months = @json($months);
+        var submissions = @json($submissions);
+
+        // Array warna untuk setiap bulan
+        var listwarna = ['rgba(75, 192, 192, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 205, 86, 0.2)',
+            'rgba(54, 162, 235, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(75, 192, 192, 0.2)'
+        ];
+
+        // Membuat array bulan
+        var bulan = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+            "November", "December"
+        ];
+
+        // Membuat array warna yang sesuai dengan jumlah bulan
+        var warna = bulan.map(function(bulan) {
+            var index = months.indexOf(bulan);
+            return index !== -1 ? listwarna[index] : 'rgba(0, 0, 0, 0.2)';
+        });
+
+
+        // Mengisi nilai 0 untuk bulan yang belum memiliki data
+        var filledSubmissions = [];
+        for (var i = 0; i < bulan.length; i++) {
+            var index = months.indexOf(bulan[i]);
+            if (index !== -1) {
+                filledSubmissions.push(submissions[index]);
+            } else {
+                filledSubmissions.push(0);
+            }
+        }
+
+        // Memberi warna yang berbeda, setiap bulan
+        var datasets = [{
+            label: 'Jumlah Pengumpulan',
+            data: filledSubmissions,
+            backgroundColor: warna,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }];
+
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: bulan,
+                datasets: datasets
+            },
+            options: {
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1,
+                            min: 0
+                        }
+                    }
+                },
+                indexAxis: 'x',
+                plugins: {
+                    legend: {
+                        display: false,
+                        position: 'top'
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 10,
+                        top: 10,
+                        bottom: 10
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                categoryPercentage: 0.8,
+                barPercentage: 0.8
+            }
+        });
+    </script>
 @endsection

@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Halaman Pengumpulan Tugas Siswa
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -96,6 +100,8 @@
                                             @endif
                                         </td>
                                         <td>
+                                            <button type="button" class="btn btn-danger btn-sm deletebtn"
+                                                data-id="{{ $row->id }}">Hapus</button>
                                             <a href="{{ route('update-pengumpulan', ['id' => $row->id]) }}"
                                                 class="btn btn-success btn-sm">Beri Nilai</a>
                                         </td>
@@ -150,7 +156,7 @@
                     confirmButtonText: "Yes, delete it!"
                 }).then(function(result) {
                     if (result.isConfirmed) {
-                        $.post('{{ route('index', ['id' => '__id__']) }}'.replace('__id__',
+                        $.post('{{ route('delete', ['id' => '__id__']) }}'.replace('__id__',
                                 id), {
                                 '_token': '{{ csrf_token() }}',
                                 'id': id

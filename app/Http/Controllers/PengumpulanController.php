@@ -66,6 +66,24 @@ class PengumpulanController extends Controller
         return redirect('index-pengumpulan')->with('status', 'Data berhasil ditambah');
     }
 
+    public function delete(Request $request)
+    {
+        $id = $request->input('id');
+        $pengumpulan = Pengumpulan::find($id);
+
+        if ($pengumpulan->file) {
+            $photoPath = public_path('uploads/pengumpulan/' . $pengumpulan->file);
+
+            if (file_exists($photoPath)) {
+                unlink($photoPath);
+            }
+        }
+
+        $pengumpulan->delete();
+
+        return response()->json(['success' => true]);
+    }
+
     // Admin
     public function indexadm()
     {

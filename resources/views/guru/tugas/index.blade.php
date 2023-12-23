@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Halaman Tugas Siswa
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -142,7 +146,7 @@
                     confirmButtonText: "Yes, delete it!"
                 }).then(function(result) {
                     if (result.isConfirmed) {
-                        $.post('{{ route('delete', ['id' => '__id__']) }}'.replace('__id__',
+                        $.post('{{ route('delete-tugas', ['id' => '__id__']) }}'.replace('__id__',
                                 id), {
                                 '_token': '{{ csrf_token() }}',
                                 'id': id

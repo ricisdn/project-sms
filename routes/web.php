@@ -158,7 +158,7 @@ Route::group(['middleware' => ['auth', 'role:2']], function () {
     Route::post('tambah-tugas', 'TugasController@store')->name('tambah-tugas');
     Route::get('/update-tugas/{tugas}/edit', 'TugasController@edit')->name('update-tugas');
     Route::post('/update-tugas/{tugas}/edit', 'TugasController@update')->name('update-tugas');
-    Route::post('/delete-tugas/{id}', 'TugasController@delete')->name('delete');
+    Route::post('/delete-tugas/{id}', 'TugasController@delete')->name('delete-tugas');
 
 
     // Route Pengumpulan
@@ -167,6 +167,7 @@ Route::group(['middleware' => ['auth', 'role:2']], function () {
     Route::post('tambah-pengumpulan', 'PengumpulanController@store')->name('tambah-pengumpulan');
     Route::get('update-pengumpulan/{pengumpulan}/edit', 'PengumpulanController@edit')->name('update-pengumpulan');
     Route::post('/update-pengumpulan/{pengumpulan}/edit', 'PengumpulanController@update')->name('update-pengumpulan');
+    Route::post('/delete-pengumpulan/{id}', 'TugasController@delete')->name('delete');
 
     // Route Nilai
     Route::get('/index-nilai', 'NilaiController@index')->name('nilai');

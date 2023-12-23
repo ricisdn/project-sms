@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Halaman Data Siswa
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -135,40 +139,34 @@
                 var id = $(this).data('id');
 
                 Swal.fire({
-                    title: "Deleting...",
-                    html: '<img src="https://media.giphy.com/media/6036p0cTnjUrNFpAlr/giphy.gif" style="width: 80px; height: 80px;">',
-                    showCancelButton: false,
-                    showConfirmButton: false,
-                    allowOutsideClick: false,
-                    allowEscapeKey: false,
-                    allowEnterKey: false
-                });
+                    title: "Apakah anda yakin?",
+                    text: "Data yang sudah dihapus, tidak bisa dipulihkan!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then(function(result) {
+                    if (result.isConfirmed) {
+                        $.post('{{ route('delete-siswa', ['id' => '__id__']) }}'.replace(
+                                '__id__',
+                                id), {
+                                '_token': '{{ csrf_token() }}',
+                                'id': id
+                            },
+                            function(response) {
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Data berhasil dihapus!",
+                                    icon: "success"
+                                });
 
-                $.ajax({
-                    type: 'POST',
-                    url: '{{ route('delete-siswa', ['id' => '__id__']) }}'.replace('__id__', id),
-                    data: {
-                        '_token': '{{ csrf_token() }}',
-                        'id': id
-                    },
-                    success: function(response) {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Data berhasil dihapus!",
-                            icon: "success"
-                        });
-
-                        // Timer sebelum refresh halaman
-                        setTimeout(function() {
-                            window.location.reload();
-                        }, 1000);
-                    },
-                    error: function(error) {
-                        console.error('Error deleting record: ', error);
-                        Swal.fire({
-                            title: "Error!",
-                            text: "Error deleting data!",
-                            icon: "error"
+                                // Timer sebelum refresh halaman
+                                setTimeout(function() {
+                                    window.location.href = window.location.href;
+                                }, 1000);
+                            }).fail(function(error) {
+                            console.error('Error deleting record: ', error);
                         });
                     }
                 });

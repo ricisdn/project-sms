@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Halaman Jadwal Mengajar
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
