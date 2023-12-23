@@ -165,8 +165,8 @@
         ];
 
         // Membuat array bulan
-        var bulan = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
-            "November", "December"
+        var bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober",
+            "November", "Desember"
         ];
 
         // Membuat array warna yang sesuai dengan jumlah bulan
