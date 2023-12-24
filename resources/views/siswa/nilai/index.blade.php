@@ -41,8 +41,7 @@
                         </div>
                         <div class="col-6">
                             <div class="float-right mb-3">
-                                <a class="btn btn-outline-primary"><i class="fas fa-download"></i>
-                                    Download</a>
+                            <button id="printBtn" class="btn btn-success">Print Data</button>
                             </div>
                         </div>
                     </div>
@@ -89,7 +88,64 @@
 
     <script>
         $(document).ready(function() {
+            $('.deletebtn').click(function(e) {
+                e.preventDefault();
+                var id = $(this).data('id');
+
+                Swal.fire({
+                    title: "Apakah anda yakin?",
+                    text: "Data yang sudah dihapus, tidak bisa dipulihkan!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then(function(result) {
+                    if (result.isConfirmed) {
+                        $.post('{{ route('jadwal', ['id' => '__id__']) }}'.replace('__id__',
+                                id), {
+                                '_token': '{{ csrf_token() }}',
+                                'id': id
+                            },
+                            function(response) {
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Data berhasil dihapus!",
+                                    icon: "success"
+                                });
+
+                                // Timer sebelum refresh halaman
+                                setTimeout(function() {
+                                    window.location.href = window.location.href;
+                                }, 1000);
+                            }).fail(function(error) {
+                            console.error('Error deleting record: ', error);
+                        });
+                    }
+                });
+            });
+
+            function download() {
+                var print = $('#table').clone();
+                var printWindow = window.open('', '_blank');
+                printWindow.document.write('<html><head><title>Print</title></head><body>');
+                printWindow.document.write('<h1>Rekapitulasi Data Nilai</h1>');
+                printWindow.document.write(
+                    '<table border=1 style="border-collapse:collapse; width: 100%; text-align: center;">' +
+                    print
+                    .html() + '</table>');
+                printWindow.document.write('</body></html>');
+
+                printWindow.document.close();
+                printWindow.print();
+            }
+
+            $('#printBtn').on('click', function() {
+                download();
+            });
+
             $('#table').DataTable();
+
         });
     </script>
 @endsection
