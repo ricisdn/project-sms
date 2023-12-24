@@ -101,7 +101,7 @@
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link text-light" style="margin-left: -4px">
                                 <i data-lucide="monitor-up"></i>
-                                <p>Semua Data <i class="right fas fa-angle-left"></i></p>
+                                <p>Data Master<i class="right fas fa-angle-left"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
