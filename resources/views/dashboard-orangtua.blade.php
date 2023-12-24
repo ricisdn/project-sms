@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Dashboard Orang Tua
+@endsection
+
 @section('content')
     <div class="content-wrapper" style="background-color: #ddd">
         <!-- Content Header (Page header) -->

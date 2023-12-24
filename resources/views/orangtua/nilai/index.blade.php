@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Halaman Nilai Siswa
+@endsection
+
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-wrapper" style="background-color: #ddd">
