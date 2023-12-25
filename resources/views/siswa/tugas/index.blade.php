@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Halaman Tugas Siswa
+@endsection
+
 @section('content')
     <div class="content-wrapper" style="background-color: #ddd">
         <!-- /.content-header -->

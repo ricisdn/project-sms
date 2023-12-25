@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Halaman Nilai Siswa
+@endsection
+
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-wrapper" style="background-color: #ddd">
@@ -36,7 +40,7 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" style="overflow-x:auto;">
                         @if ($nilai->isEmpty())
                             <div class="alert alert-danger" role="alert">
                                 <strong>Error.</strong> No data found.

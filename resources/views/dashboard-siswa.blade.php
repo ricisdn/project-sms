@@ -12,6 +12,10 @@
     </style>
 @endsection
 
+@section('title')
+    Dashboard Siswa
+@endsection
+
 @php
     function hariIndonesiaToInggris($hari)
     {
