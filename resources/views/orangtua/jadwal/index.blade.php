@@ -40,13 +40,13 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" style="overflow-x:auto;">
                         @if ($mapel->isEmpty())
                             <div class="alert alert-danger" role="alert">
                                 <strong>Error.</strong> No data found.
                             </div>
                         @else
-                            <table id="jadwal-table" class="table table-hover table-bordered mb-0" style="width:100%">
+                            <table id="jadwal-table" class="table table-hover table-bordered mb-0" style="min-width">
                                 <thead>
                                     <tr>
                                         <th>No</th>

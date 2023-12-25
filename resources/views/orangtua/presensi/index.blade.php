@@ -78,7 +78,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="overflow-x:auto;">
                         @if ($presensi->isEmpty())
                             <div class="alert alert-danger" role="alert">
                                 <strong>Error.</strong> No data found.
