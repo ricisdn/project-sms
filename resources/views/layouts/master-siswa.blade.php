@@ -66,8 +66,8 @@
         {{-- Sidebar Section --}}
         <aside class="main-sidebar sidebar-dark-primary" id="sidebar">
 
-            <img src="https://i.ibb.co/7QWNLKJ/ducation-5.png" alt="img" class="d-flex mx-auto m-0"
-                style="width: 220px; height: 140px;">
+            <img src="https://i.ibb.co/yBfs1Fj/ducation-9.png" alt="img" class="d-flex mx-auto m-0"
+                style="width: 240px; height: 180px;">
 
             <!-- Sidebar -->
             <div class="sidebar">
