@@ -69,8 +69,8 @@
         {{-- Sidebar Section --}}
         <aside class="main-sidebar sidebar-dark-primary" id="sidebar">
             <!-- Brand Logo -->
-            <img src="https://i.ibb.co/yBfs1Fj/ducation-9.png" alt="img" class="d-flex mx-auto m-0"
-                style="width: 240px; height: 180px;">
+            <img src="https://i.ibb.co/JRM4gy3/logou3.png" alt="img" class="d-flex mx-auto m-0"
+                style="width: 240px; height: 200px;">
 
             <!-- Sidebar -->
             <div class="sidebar
