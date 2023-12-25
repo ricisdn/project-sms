@@ -3,7 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTblSiswasTable extends Migration {
+class CreateTblSiswasTable extends Migration
+{
 
 	/**
 	 * Run the migrations.
@@ -12,8 +13,7 @@ class CreateTblSiswasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tbl_siswas', function(Blueprint $table)
-		{
+		Schema::create('tbl_siswas', function (Blueprint $table) {
 			$table->bigInteger('id', true)->unsigned();
 			$table->integer('id_user')->nullable();
 			$table->integer('id_kelas');
@@ -21,7 +21,7 @@ class CreateTblSiswasTable extends Migration {
 			$table->string('nomor_telepon');
 			$table->string('jenis_kelamin');
 			$table->string('alamat');
-			$table->text('foto', 65535)->nullable();
+			$table->text('foto')->nullable();
 			$table->timestamps();
 		});
 	}
