@@ -3,7 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTblPengumpulansTable extends Migration {
+class CreateTblPengumpulansTable extends Migration
+{
 
 	/**
 	 * Run the migrations.
@@ -12,14 +13,13 @@ class CreateTblPengumpulansTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tbl_pengumpulans', function(Blueprint $table)
-		{
+		Schema::create('tbl_pengumpulans', function (Blueprint $table) {
 			$table->bigInteger('id', true)->unsigned();
 			$table->integer('id_user');
 			$table->integer('id_kelas');
 			$table->integer('id_mapel');
 			$table->integer('id_tugas')->nullable();
-			$table->text('file', 65535);
+			$table->text('file');
 			$table->integer('nilai')->nullable();
 			$table->string('catatan')->nullable();
 			$table->timestamps();

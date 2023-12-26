@@ -3,7 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTblGurusTable extends Migration {
+class CreateTblGurusTable extends Migration
+{
 
 	/**
 	 * Run the migrations.
@@ -12,8 +13,7 @@ class CreateTblGurusTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tbl_gurus', function(Blueprint $table)
-		{
+		Schema::create('tbl_gurus', function (Blueprint $table) {
 			$table->bigInteger('id', true)->unsigned();
 			$table->integer('id_user');
 			$table->date('tgl_lahir');
@@ -21,7 +21,7 @@ class CreateTblGurusTable extends Migration {
 			$table->string('jenis_kelamin');
 			$table->string('alamat');
 			$table->string('status');
-			$table->text('foto', 65535)->nullable();
+			$table->text('foto')->nullable();
 			$table->timestamps();
 		});
 	}
